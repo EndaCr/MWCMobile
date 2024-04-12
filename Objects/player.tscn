@@ -1,0 +1,144 @@
+[gd_scene load_steps=21 format=3 uid="uid://4iwflqaoexa8"]
+
+[ext_resource type="Texture2D" uid="uid://5ijrlmq8rle2" path="res://Sprites/Ship_2_D_Medium.png" id="1_6j7il"]
+[ext_resource type="Script" path="res://player.gd" id="1_ngmc6"]
+[ext_resource type="Texture2D" uid="uid://dxkdvsd3xk6xr" path="res://Sprites/Ship_2_D_Medium2.png" id="3_e7jhy"]
+[ext_resource type="Texture2D" uid="uid://xodaq28f6af4" path="res://Sprites/Ship_2_D_Medium3.png" id="4_58gdb"]
+[ext_resource type="Texture2D" uid="uid://dacja42ut4rgx" path="res://Sprites/Ship_2_D_Medium4.png" id="5_rws55"]
+[ext_resource type="Texture2D" uid="uid://bs2rjp5ps7pwh" path="res://Sprites/Ship_2_D_Medium5.png" id="6_24uqq"]
+[ext_resource type="Texture2D" uid="uid://bv8cijicm65gp" path="res://Sprites/explosion.png" id="7_3hy2a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl3b1"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqnar"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymnnn"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_467ly"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0k84"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqrok"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sv0m"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3cv5"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4yhi"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj17c"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(2304, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3jsi"]
+atlas = ExtResource("7_3hy2a")
+region = Rect2(2560, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sb2k2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6j7il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e7jhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_58gdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_24uqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rws55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_6j7il")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl3b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqnar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymnnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_467ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0k84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqrok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sv0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3cv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4yhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj17c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3jsi")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5v0cw"]
+radius = 59.0
+height = 184.0
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ngmc6")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_sb2k2")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5v0cw")
+
+[node name="Turret1" type="Marker2D" parent="."]
+position = Vector2(-76, -14)
+
+[node name="Turret2" type="Marker2D" parent="."]
+position = Vector2(76, -14)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnyfxgi8lvp1n"]
+
+[ext_resource type="Script" path="res://ItemSpawner.gd" id="1_mo2qb"]
+[ext_resource type="PackedScene" uid="uid://yh2vthgkpmt3" path="res://Objects/Enemy1.tscn" id="2_0id1a"]
+
+[node name="ItemSpawner" type="Marker2D"]
+script = ExtResource("1_mo2qb")
+item = ExtResource("2_0id1a")
+maxRange = 1500.0
+interval = 8.0

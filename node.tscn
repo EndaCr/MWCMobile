@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvh2jdtglxkss"]
+
+[ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="1_gs728"]
+[ext_resource type="Script" path="res://node.gd" id="1_s0lrw"]
+[ext_resource type="PackedScene" uid="uid://4iwflqaoexa8" path="res://Objects/player.tscn" id="2_tce1e"]
+[ext_resource type="PackedScene" uid="uid://cnyfxgi8lvp1n" path="res://Objects/item_spawner.tscn" id="3_f4xsm"]
+[ext_resource type="PackedScene" uid="uid://bpwlp2pc28qkb" path="res://Objects/PowerUp.tscn" id="4_sucii"]
+
+[node name="Node" type="Node2D"]
+process_priority = 1
+script = ExtResource("1_s0lrw")
+
+[node name="Background" type="TextureRect" parent="."]
+show_behind_parent = true
+texture_filter = 1
+texture_repeat = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -512.0
+offset_right = 2700.0
+offset_bottom = 1431.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gs728")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_tce1e")]
+position = Vector2(981, 980)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_f4xsm")]
+maxRange = 2500.0
+interval = 3.0
+
+[node name="PowerSpawner" parent="." instance=ExtResource("3_f4xsm")]
+item = ExtResource("4_sucii")
+maxRange = 2000.0
+interval = 10.0

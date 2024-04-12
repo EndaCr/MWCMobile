@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0kvf8ijedyf1"]
+
+[ext_resource type="Texture2D" uid="uid://cs150jxkfr364" path="res://Sprites/shield.png" id="1_gx1ca"]
+[ext_resource type="Script" path="res://Objects/shield.gd" id="1_hj3av"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oegtr"]
+radius = 104.0
+height = 478.0
+
+[node name="Shield" type="Area2D"]
+script = ExtResource("1_hj3av")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gx1ca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oegtr")
+one_way_collision_margin = 0.0
