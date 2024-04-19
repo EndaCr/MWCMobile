@@ -392,10 +392,9 @@ rotation = 3.14159
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_v6ujg")
-animation = &"destruction"
 autoplay = "default"
-frame = 18
-frame_progress = 1.0
+frame = 12
+frame_progress = 0.479176
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.15182e-07, -2)

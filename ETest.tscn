@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6nikf1huhyjr"]
+
+[ext_resource type="Script" path="res://node.gd" id="1_n8i42"]
+[ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="2_ovdol"]
+[ext_resource type="PackedScene" uid="uid://4iwflqaoexa8" path="res://Objects/player.tscn" id="3_4p8ni"]
+[ext_resource type="PackedScene" uid="uid://cnyfxgi8lvp1n" path="res://Objects/item_spawner.tscn" id="4_g0048"]
+[ext_resource type="PackedScene" uid="uid://bpwlp2pc28qkb" path="res://Objects/PowerUp.tscn" id="5_hayq8"]
+[ext_resource type="Texture2D" uid="uid://5ijrlmq8rle2" path="res://Sprites/Ship_2_D_Medium.png" id="6_ub8aq"]
+[ext_resource type="Texture2D" uid="uid://xodaq28f6af4" path="res://Sprites/Ship_2_D_Medium3.png" id="7_1sev8"]
+
+[node name="Node" type="Node2D"]
+process_priority = 1
+script = ExtResource("1_n8i42")
+
+[node name="Background" type="TextureRect" parent="."]
+show_behind_parent = true
+texture_filter = 1
+texture_repeat = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -512.0
+offset_right = 2700.0
+offset_bottom = 1431.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ovdol")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("3_4p8ni")]
+position = Vector2(981, 980)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_g0048")]
+maxRange = 2500.0
+interval = 3.0
+
+[node name="PowerSpawner" parent="." instance=ExtResource("4_g0048")]
+item = ExtResource("5_hayq8")
+maxRange = 2000.0
+interval = 10.0
+
+[node name="LeftButton" type="TouchScreenButton" parent="."]
+position = Vector2(-5, 1059.94)
+rotation = -1.5708
+scale = Vector2(0.624349, 0.569106)
+texture_normal = ExtResource("6_ub8aq")
+texture_pressed = ExtResource("7_1sev8")
+passby_press = true
+action = "left"
+
+[node name="RightButton" type="TouchScreenButton" parent="."]
+position = Vector2(1913.31, 921.167)
+rotation = 1.5708
+scale = Vector2(0.624349, 0.569106)
+texture_normal = ExtResource("6_ub8aq")
+texture_pressed = ExtResource("7_1sev8")
+action = "right"
+
+[node name="TestLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 76
+
+[node name="Node" type="Node" parent="."]

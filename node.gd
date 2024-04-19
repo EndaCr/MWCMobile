@@ -9,7 +9,7 @@ var storedMid: Vector2
 
 var drawing = false
 var length = 100
-var drawRange = 5
+var drawRange = 10
 # Called when the node enters the scene tree for the first time.
 var missile = preload("res://Objects/missile.tscn")
 var shield = preload("res://Objects/shield.tscn")
@@ -17,12 +17,18 @@ var turret = preload("res://Objects/turret.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	
+		var tiltRate = Input.get_accelerometer()
+		$TestLabel.text = str(tiltRate.x) +", "+ str(tiltRate.y)
+		if tiltRate.x > 9.8 || tiltRate.x <-9.8 || tiltRate.y > 9.8 || tiltRate.y <-9.8:
+			print("acceleration") 
+	
 		if Input.is_action_just_pressed("shoot"):
 			if !drawing:
 				drawing = true
 				startPoint = get_global_mouse_position()
-				print("position: " , startPoint)
-	# Handle jump.
+		#		print("position: " , startPoint)
+
 		if Input.is_action_pressed("shoot"):
 			if drawing:
 				curPoint = get_global_mouse_position()
@@ -63,7 +69,6 @@ func _process(_delta):
 func inst(point, item):
 	var m_item = item.instantiate()
 	m_item.position = point + Vector2(0,300)
-	#get_tree().current_scene.add_child(bullet1)
 	add_child(m_item)
 
 
