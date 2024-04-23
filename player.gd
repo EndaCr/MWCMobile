@@ -1,20 +1,21 @@
 extends CharacterBody2D
 
+
+
 var startPoint: Vector2
 var curPoint: Vector2
 var bullet = preload("res://Objects/Bullet.tscn")
 var SPEED = 400.0
 
-#const JUMP_VELOCITY = -400.0
-var drawing = false
-var length = 100
+var hp = 3
 
 func _draw():
 	draw_line(Vector2(startPoint.x, startPoint.y),Vector2(curPoint.x, curPoint.y),Color.WHITE, 5.0)
 
 func _physics_process(_delta):
-
-
+	if hp <= 0:
+		$AnimatedSprite2D.play("explosion")
+		$AnimatedSprite2D.stop()
 	# Handle jump.
 	if Input.is_action_just_pressed("shoot"):
 		inst($Turret1,$Turret2)

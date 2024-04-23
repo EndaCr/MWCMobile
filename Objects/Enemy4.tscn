@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://bdcib8w51pxj1"]
 
-[ext_resource type="Script" path="res://Objects/Enemy1.gd" id="1_iuyjg"]
+[ext_resource type="Script" path="res://Objects/Enemy4.gd" id="1_sfmor"]
 [ext_resource type="Texture2D" uid="uid://d281dx8ocxa53" path="res://Sprites/Nairan - Battlecruiser - Weapons.png" id="2_nru40"]
 [ext_resource type="Texture2D" uid="uid://bq0jv0u1hr76x" path="res://Sprites/Nairan - Battlecruiser  -  Destruction.png" id="3_8wm7x"]
 
@@ -213,19 +213,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqh4d"]
-size = Vector2(72, 66)
+size = Vector2(187, 254)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_iuyjg")
+[node name="enemy" type="Area2D"]
+script = ExtResource("1_sfmor")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 rotation = 3.14159
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_pwlm2")
-animation = &"destruction"
 autoplay = "default"
+frame = 7
+frame_progress = 0.815434
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(-0.5, 20)
 shape = SubResource("RectangleShape2D_vqh4d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://djh3seajy0l2k"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_b8es6"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_b8es6")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 615.0
+offset_top = 97.0
+offset_right = 1601.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 101
+text = "Milky Way Conquest"
+
+[node name="Start" type="Button" parent="."]
+custom_minimum_size = Vector2(0.2, 0)
+offset_left = 962.0
+offset_top = 312.0
+offset_right = 1264.0
+offset_bottom = 491.0
+theme_override_font_sizes/font_size = 100
+text = "Start"
+
+[node name="Help" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.056
+anchor_bottom = 0.026
+offset_left = 964.0
+offset_top = 526.0
+offset_right = 1203.49
+offset_bottom = 679.152
+theme_override_font_sizes/font_size = 100
+text = "Help
+"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 961.0
+offset_top = 731.0
+offset_right = 1264.0
+offset_bottom = 904.0
+theme_override_font_sizes/font_size = 100
+text = "Exit"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvh2jdtglxkss"]
+[gd_scene load_steps=11 format=3 uid="uid://cvh2jdtglxkss"]
 
 [ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="1_gs728"]
 [ext_resource type="Script" path="res://node.gd" id="1_s0lrw"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bpwlp2pc28qkb" path="res://Objects/PowerUp.tscn" id="4_sucii"]
 [ext_resource type="PackedScene" uid="uid://ew25cc7xayrg" path="res://Objects/Enemy2.tscn" id="5_abeod"]
 [ext_resource type="Texture2D" uid="uid://5ijrlmq8rle2" path="res://Sprites/Ship_2_D_Medium.png" id="6_3dct6"]
+[ext_resource type="PackedScene" uid="uid://bdcib8w51pxj1" path="res://Objects/Enemy4.tscn" id="6_w0ukj"]
 [ext_resource type="Texture2D" uid="uid://xodaq28f6af4" path="res://Sprites/Ship_2_D_Medium3.png" id="7_kb2s4"]
+[ext_resource type="Script" path="res://GameManager.gd" id="10_hccpg"]
 
 [node name="Node" type="Node2D"]
 process_priority = 1
@@ -15,6 +17,8 @@ script = ExtResource("1_s0lrw")
 
 [node name="Background" type="TextureRect" parent="."]
 show_behind_parent = true
+light_mask = 513
+visibility_layer = 513
 texture_filter = 1
 texture_repeat = 2
 anchors_preset = 15
@@ -33,17 +37,26 @@ stretch_mode = 1
 position = Vector2(981, 980)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_f4xsm")]
-maxRange = 2500.0
+maxRange = 1800.0
 interval = 3.0
 
 [node name="EnemySpawner2" parent="." instance=ExtResource("3_f4xsm")]
+unique_name_in_owner = true
+visible = false
 item = ExtResource("5_abeod")
-maxRange = 2500.0
+maxRange = 1800.0
 interval = 3.0
+
+[node name="EnemySpawner3" parent="." instance=ExtResource("3_f4xsm")]
+unique_name_in_owner = true
+visible = false
+item = ExtResource("6_w0ukj")
+maxRange = 1800.0
+interval = 9.0
 
 [node name="PowerSpawner" parent="." instance=ExtResource("3_f4xsm")]
 item = ExtResource("4_sucii")
-maxRange = 2000.0
+maxRange = 1800.0
 interval = 10.0
 
 [node name="LeftButton" type="TouchScreenButton" parent="."]
@@ -67,3 +80,21 @@ action = "right"
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 76
+
+[node name="Stats" type="Label" parent="."]
+offset_left = 1690.0
+offset_top = 12.0
+offset_right = 1730.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 76
+
+[node name="Stats2" type="Label" parent="."]
+offset_left = 1625.0
+offset_top = 148.0
+offset_right = 1665.0
+offset_bottom = 253.0
+theme_override_font_sizes/font_size = 76
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("10_hccpg")

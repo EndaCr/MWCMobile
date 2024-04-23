@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MWC_mobile"
-run/main_scene="res://node.tscn"
+run/main_scene="res://MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -48,3 +48,4 @@ shoot={
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.129412, 0.113725, 0.309804, 0)

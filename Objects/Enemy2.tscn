@@ -170,7 +170,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84s05"]
 size = Vector2(42, 42)
 
-[node name="Enemy" type="Area2D"]
+[node name="enemy" type="Area2D"]
 rotation = 3.14159
 scale = Vector2(2, 2)
 script = ExtResource("1_heo3k")
@@ -185,3 +185,4 @@ position = Vector2(-9.14109e-08, -2)
 shape = SubResource("RectangleShape2D_84s05")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
