@@ -9,7 +9,7 @@ var timer = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	timer += delta
-	if timer >= interval:
+	if timer >= interval && is_visible_in_tree():
 		spawnItem()
 		timer = 0
 

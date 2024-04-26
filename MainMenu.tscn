@@ -6,18 +6,18 @@
 script = ExtResource("1_b8es6")
 
 [node name="Title" type="Label" parent="."]
-offset_left = 615.0
-offset_top = 97.0
-offset_right = 1601.0
-offset_bottom = 235.0
+offset_left = 548.0
+offset_top = 80.0
+offset_right = 1534.0
+offset_bottom = 218.0
 theme_override_font_sizes/font_size = 101
 text = "Milky Way Conquest"
 
 [node name="Start" type="Button" parent="."]
 custom_minimum_size = Vector2(0.2, 0)
-offset_left = 962.0
+offset_left = 850.0
 offset_top = 312.0
-offset_right = 1264.0
+offset_right = 1152.0
 offset_bottom = 491.0
 theme_override_font_sizes/font_size = 100
 text = "Start"
@@ -26,19 +26,19 @@ text = "Start"
 anchors_preset = -1
 anchor_right = 0.056
 anchor_bottom = 0.026
-offset_left = 964.0
-offset_top = 526.0
-offset_right = 1203.49
-offset_bottom = 679.152
+offset_left = 774.0
+offset_top = 522.0
+offset_right = 1143.49
+offset_bottom = 675.152
 theme_override_font_sizes/font_size = 100
-text = "Help
+text = "Tutorials
 "
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 961.0
-offset_top = 731.0
-offset_right = 1264.0
-offset_bottom = 904.0
+offset_left = 842.0
+offset_top = 736.0
+offset_right = 1145.0
+offset_bottom = 909.0
 theme_override_font_sizes/font_size = 100
 text = "Exit"
 
