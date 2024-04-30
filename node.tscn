@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvh2jdtglxkss"]
+[gd_scene load_steps=14 format=3 uid="uid://cvh2jdtglxkss"]
 
 [ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="1_gs728"]
 [ext_resource type="Script" path="res://node.gd" id="1_s0lrw"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bdcib8w51pxj1" path="res://Objects/Enemy4.tscn" id="6_w0ukj"]
 [ext_resource type="Texture2D" uid="uid://xodaq28f6af4" path="res://Sprites/Ship_2_D_Medium3.png" id="7_kb2s4"]
 [ext_resource type="Script" path="res://GameManager.gd" id="10_hccpg"]
+[ext_resource type="Texture2D" uid="uid://kwd7vmw8m4dw" path="res://Sprites/Missile_D_Medium.png" id="11_hi103"]
+[ext_resource type="Texture2D" uid="uid://cs150jxkfr364" path="res://Sprites/shield.png" id="12_ff4yu"]
+[ext_resource type="Texture2D" uid="uid://dt2wpt2whplhg" path="res://Sprites/turret.png" id="13_303th"]
 
 [node name="Node" type="Node2D"]
 process_priority = 1
@@ -54,6 +57,12 @@ item = ExtResource("6_w0ukj")
 maxRange = 1800.0
 interval = 9.0
 
+[node name="EnemySpawner4" parent="." instance=ExtResource("3_f4xsm")]
+unique_name_in_owner = true
+visible = false
+maxRange = 1800.0
+interval = 3.0
+
 [node name="PowerSpawner" parent="." instance=ExtResource("3_f4xsm")]
 item = ExtResource("4_sucii")
 maxRange = 1800.0
@@ -82,19 +91,33 @@ offset_bottom = 23.0
 theme_override_font_sizes/font_size = 76
 
 [node name="Stats" type="Label" parent="."]
-offset_left = 1690.0
+offset_left = 1626.0
 offset_top = 12.0
-offset_right = 1730.0
+offset_right = 1670.0
 offset_bottom = 117.0
 theme_override_font_sizes/font_size = 76
 
 [node name="Stats2" type="Label" parent="."]
-offset_left = 1625.0
+offset_left = 1631.0
 offset_top = 148.0
-offset_right = 1665.0
+offset_right = 1671.0
 offset_bottom = 253.0
 theme_override_font_sizes/font_size = 76
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("10_hccpg")
+
+[node name="MissileIcon" type="Sprite2D" parent="."]
+position = Vector2(72, 442)
+texture = ExtResource("11_hi103")
+
+[node name="ShieldIcon" type="Sprite2D" parent="."]
+position = Vector2(81, 621)
+scale = Vector2(0.299079, 0.356914)
+texture = ExtResource("12_ff4yu")
+
+[node name="TurretIcon" type="Sprite2D" parent="."]
+position = Vector2(69.9999, 784)
+scale = Vector2(0.188867, 0.211958)
+texture = ExtResource("13_303th")

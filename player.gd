@@ -5,9 +5,10 @@ extends CharacterBody2D
 var startPoint: Vector2
 var curPoint: Vector2
 var bullet = preload("res://Objects/Bullet.tscn")
-var SPEED = 400.0
+#var menu = preload("res://MainMenu.tscn")
+var SPEED = 600.0
 
-var hp = 3
+@export var hp = 3
 
 func _draw():
 	draw_line(Vector2(startPoint.x, startPoint.y),Vector2(curPoint.x, curPoint.y),Color.WHITE, 5.0)
@@ -15,7 +16,7 @@ func _draw():
 func _physics_process(_delta):
 	if hp <= 0:
 		$AnimatedSprite2D.play("explosion")
-		$AnimatedSprite2D.stop()
+		await gameOver()
 	# Handle jump.
 	if Input.is_action_just_pressed("shoot"):
 		inst($Turret1,$Turret2)
@@ -37,3 +38,8 @@ func inst(turret1 , turret2):
 	add_child(bullet1)
 	add_child(bullet2)
 	
+func gameOver():
+	await get_tree().create_timer(0.8).timeout
+	$AnimatedSprite2D.stop()
+	get_tree().change_scene_to_file("res://.godot/exported/133200997/export-e20540a8a37e906f11cb1dae59cc6ed4-MainMenu.scn")
+	pass

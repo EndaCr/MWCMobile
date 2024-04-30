@@ -10,7 +10,7 @@ var storedMid: Vector2
 var canDraw = false
 var drawing = false
 var length = 100
-var drawRange = 20
+var drawRange = 30
 
 var missile = preload("res://Objects/missile.tscn")
 var shield = preload("res://Objects/shield.tscn")
@@ -18,7 +18,7 @@ var turret = preload("res://Objects/turret.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 		var tiltRate = Input.get_accelerometer()
 		$TiltLabel.text = str(snapped(tiltRate.x,0.01)) +", "+ str(snapped(tiltRate.y,0.01))
@@ -40,30 +40,33 @@ func _process(delta):
 				curPoint = get_global_mouse_position()
 				if startPoint.distance_to(curPoint) >= length:
 					midPoint = Vector2((startPoint.x+curPoint.x)/2,(startPoint.y+curPoint.y)/2)
-					#print("drawn")
+					#$TutorialLabel.text = str(abs(storedStart.y - storedEnd.y))
 					queue_redraw()
-					if startPoint.distance_to(storedEnd)<= drawRange && startPoint.distance_to(curPoint)>= storedStart.distance_to(storedEnd):
+					if abs(storedEnd.y - startPoint.y)<=50 && startPoint.distance_to(curPoint)>= storedStart.distance_to(storedEnd):
 						if storedStart.y > storedEnd.y && curPoint.y >startPoint.y:
+							var missilePoint = Vector2((startPoint.x+storedEnd.x)/2,(startPoint.y+storedEnd.y)/2)
 							print("missile")
-							inst(storedEnd,missile)
+							inst(missilePoint,missile)
 							storedStart = Vector2.ZERO
 							storedEnd = Vector2.ZERO
 							startPoint = curPoint
 							
 							#curPoint = Vector2.ZERO
-					if startPoint.distance_to(storedMid)<= drawRange+5 && curPoint.y >storedMid.y:
-						print("shield")
-						inst(storedMid, shield)
-						storedStart = Vector2.ZERO
-						storedEnd = Vector2.ZERO
-						startPoint = curPoint
+					if startPoint.distance_to(storedMid)<= 100 && curPoint.y >storedMid.y:
+						if abs(storedStart.y - storedEnd.y)<= 80:
+							print("shield")
+							inst(storedMid, shield)
+							storedStart = Vector2.ZERO
+							storedEnd = Vector2.ZERO
+							startPoint = curPoint
 					if midPoint.distance_to(storedMid) <= drawRange:
-						print("turret")
-						inst(midPoint, turret)
-						storedStart = Vector2.ZERO
-						storedEnd = Vector2.ZERO
-						storedMid = Vector2.ZERO
-						startPoint = curPoint
+						if(abs(storedStart.y - storedEnd.y)<= 5 && abs(startPoint.x - curPoint.x)<= 5)||(abs(storedStart.x - storedEnd.x)<= 5 && abs(startPoint.y - curPoint.y)<= 5):
+							print("turret")
+							inst(midPoint, turret)
+							storedStart = Vector2.ZERO
+							storedEnd = Vector2.ZERO
+							storedMid = Vector2.ZERO
+							startPoint = curPoint
 		else:
 			drawing = false
 			storedStart = startPoint

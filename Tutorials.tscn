@@ -52,9 +52,12 @@ offset_bottom = 262.0
 theme_override_font_sizes/font_size = 50
 
 [node name="Player" parent="." instance=ExtResource("2_aykgv")]
+visible = false
 position = Vector2(567, 1018.1)
+hp = 9999
 
 [node name="LeftButton" type="TouchScreenButton" parent="."]
+visible = false
 position = Vector2(0.28, 1077.28)
 rotation = -1.5708
 scale = Vector2(0.624, 0.624)
@@ -63,6 +66,7 @@ texture_pressed = ExtResource("4_5o31p")
 action = "left"
 
 [node name="RightButton" type="TouchScreenButton" parent="."]
+visible = false
 position = Vector2(1930.07, 923.815)
 rotation = 1.5708
 scale = Vector2(0.624, 0.624)
@@ -71,6 +75,7 @@ texture_pressed = ExtResource("4_5o31p")
 action = "right"
 
 [node name="TiltLabel" type="Label" parent="."]
+visible = false
 offset_left = 1571.0
 offset_top = 33.0
 offset_right = 1611.0

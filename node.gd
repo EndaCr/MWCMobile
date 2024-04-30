@@ -9,10 +9,13 @@ var storedMid: Vector2
 
 var drawing = false
 var length = 100
-var drawRange = 20
+var drawRange = 30
 
 
-# Called when the node enters the scene tree for the first time.
+var missileOn = true
+var shieldOn = true
+var turretOn = true
+
 var missile = preload("res://Objects/missile.tscn")
 var shield = preload("res://Objects/shield.tscn")
 var turret = preload("res://Objects/turret.tscn")
@@ -39,30 +42,43 @@ func _process(_delta):
 				curPoint = get_global_mouse_position()
 				if startPoint.distance_to(curPoint) >= length:
 					midPoint = Vector2((startPoint.x+curPoint.x)/2,(startPoint.y+curPoint.y)/2)
-					#print("drawn")
 					queue_redraw()
-					if startPoint.distance_to(storedEnd)<= drawRange && startPoint.distance_to(curPoint)>= storedStart.distance_to(storedEnd):
-						if storedStart.y > storedEnd.y && curPoint.y >startPoint.y:
+					if abs(storedEnd.y - startPoint.y)<=50 && startPoint.distance_to(curPoint)>= storedStart.distance_to(storedEnd):
+						if storedStart.y > storedEnd.y && curPoint.y >startPoint.y && missileOn:
+							var missilePoint = Vector2((startPoint.x+storedEnd.x)/2,(startPoint.y+storedEnd.y)/2)
 							print("missile")
-							inst(storedEnd,missile)
+							inst(missilePoint,missile)
+							missileOn= false
+							$MissileIcon.set_visible(false)
 							storedStart = Vector2.ZERO
 							storedEnd = Vector2.ZERO
 							startPoint = curPoint
-							
+							await refresh($MissileIcon)
+							missileOn = true
 							#curPoint = Vector2.ZERO
-					if startPoint.distance_to(storedMid)<= drawRange+5 && curPoint.y >storedMid.y:
-						print("shield")
-						inst(storedMid, shield)
-						storedStart = Vector2.ZERO
-						storedEnd = Vector2.ZERO
-						startPoint = curPoint
-					if midPoint.distance_to(storedMid) <= drawRange:
-						print("turret")
-						inst(midPoint, turret)
-						storedStart = Vector2.ZERO
-						storedEnd = Vector2.ZERO
-						storedMid = Vector2.ZERO
-						startPoint = curPoint
+					if startPoint.distance_to(storedMid)<= 100 && curPoint.y >storedMid.y:
+						if abs(storedStart.y - storedEnd.y)<= 80 && shieldOn:
+							print("shield")
+							inst(storedMid, shield)
+							shieldOn = false
+							$ShieldIcon.set_visible(false)
+							storedStart = Vector2.ZERO
+							storedEnd = Vector2.ZERO
+							startPoint = curPoint
+							await refresh($ShieldIcon)
+							shieldOn = true
+					if midPoint.distance_to(storedMid) <= drawRange && turretOn:
+						if(abs(storedStart.y - storedEnd.y)<= 5 && abs(startPoint.x - curPoint.x)<= 5)||(abs(storedStart.x - storedEnd.x)<= 5 && abs(startPoint.y - curPoint.y)<= 5):
+							print("turret")
+							inst(midPoint, turret)
+							turretOn = false
+							$TurretIcon.set_visible(false)
+							storedStart = Vector2.ZERO
+							storedEnd = Vector2.ZERO
+							storedMid = Vector2.ZERO
+							startPoint = curPoint
+							await refresh($TurretIcon)
+							turretOn = true
 		else:
 			drawing = false
 			storedStart = startPoint
@@ -77,7 +93,11 @@ func inst(point, item):
 	add_child(m_item)
 
 
-
+func refresh(icon):
+	await get_tree().create_timer(5).timeout
+	#cooldown = true
+	icon.set_visible(true)
+	pass
 
 
 
