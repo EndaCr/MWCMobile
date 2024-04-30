@@ -1,6 +1,6 @@
 [gd_scene load_steps=52 format=3 uid="uid://0j2h6mlgev5d"]
 
-[ext_resource type="Script" path="res://Objects/Enemy1.gd" id="1_xwmcg"]
+[ext_resource type="Script" path="res://Objects/Enemy3.gd" id="1_2oiqn"]
 [ext_resource type="Texture2D" uid="uid://bjob0p6ipoye0" path="res://Sprites/Nairan - Fighter - Weapons.png" id="2_asvji"]
 [ext_resource type="Texture2D" uid="uid://cdgax8k4dk16v" path="res://Sprites/Nairan - Fighter -  Destruction.png" id="3_rovcy"]
 
@@ -342,8 +342,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqh4d"]
 size = Vector2(72, 66)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_xwmcg")
+[node name="enemy" type="Area2D"]
+modulate = Color(1, 1, 0.337255, 1)
+script = ExtResource("1_2oiqn")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

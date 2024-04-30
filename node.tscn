@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvh2jdtglxkss"]
+[gd_scene load_steps=15 format=3 uid="uid://cvh2jdtglxkss"]
 
 [ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="1_gs728"]
 [ext_resource type="Script" path="res://node.gd" id="1_s0lrw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ew25cc7xayrg" path="res://Objects/Enemy2.tscn" id="5_abeod"]
 [ext_resource type="Texture2D" uid="uid://5ijrlmq8rle2" path="res://Sprites/Ship_2_D_Medium.png" id="6_3dct6"]
 [ext_resource type="PackedScene" uid="uid://bdcib8w51pxj1" path="res://Objects/Enemy4.tscn" id="6_w0ukj"]
+[ext_resource type="PackedScene" uid="uid://0j2h6mlgev5d" path="res://Objects/Enemy3.tscn" id="7_hf8m7"]
 [ext_resource type="Texture2D" uid="uid://xodaq28f6af4" path="res://Sprites/Ship_2_D_Medium3.png" id="7_kb2s4"]
 [ext_resource type="Script" path="res://GameManager.gd" id="10_hccpg"]
 [ext_resource type="Texture2D" uid="uid://kwd7vmw8m4dw" path="res://Sprites/Missile_D_Medium.png" id="11_hi103"]
@@ -40,32 +41,33 @@ stretch_mode = 1
 position = Vector2(981, 980)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_f4xsm")]
-maxRange = 1800.0
+maxRange = 1800
 interval = 3.0
 
 [node name="EnemySpawner2" parent="." instance=ExtResource("3_f4xsm")]
 unique_name_in_owner = true
 visible = false
 item = ExtResource("5_abeod")
-maxRange = 1800.0
+maxRange = 1800
 interval = 3.0
 
 [node name="EnemySpawner3" parent="." instance=ExtResource("3_f4xsm")]
 unique_name_in_owner = true
 visible = false
 item = ExtResource("6_w0ukj")
-maxRange = 1800.0
+maxRange = 1800
 interval = 9.0
 
 [node name="EnemySpawner4" parent="." instance=ExtResource("3_f4xsm")]
 unique_name_in_owner = true
 visible = false
-maxRange = 1800.0
+item = ExtResource("7_hf8m7")
+maxRange = 1800
 interval = 3.0
 
 [node name="PowerSpawner" parent="." instance=ExtResource("3_f4xsm")]
 item = ExtResource("4_sucii")
-maxRange = 1800.0
+maxRange = 1800
 interval = 10.0
 
 [node name="LeftButton" type="TouchScreenButton" parent="."]
@@ -109,15 +111,18 @@ unique_name_in_owner = true
 script = ExtResource("10_hccpg")
 
 [node name="MissileIcon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.564706)
 position = Vector2(72, 442)
 texture = ExtResource("11_hi103")
 
 [node name="ShieldIcon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.564706)
 position = Vector2(81, 621)
 scale = Vector2(0.299079, 0.356914)
 texture = ExtResource("12_ff4yu")
 
 [node name="TurretIcon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.564706)
 position = Vector2(69.9999, 784)
 scale = Vector2(0.188867, 0.211958)
 texture = ExtResource("13_303th")

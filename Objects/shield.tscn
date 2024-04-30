@@ -8,6 +8,7 @@ radius = 104.0
 height = 478.0
 
 [node name="Shield" type="Area2D"]
+modulate = Color(1, 1, 1, 0.705882)
 script = ExtResource("1_hj3av")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

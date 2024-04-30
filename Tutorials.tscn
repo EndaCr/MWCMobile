@@ -84,6 +84,8 @@ theme_override_font_sizes/font_size = 76
 
 [node name="Shapes" type="Sprite2D" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0.282353)
+z_index = -1
 texture_filter = 1
 position = Vector2(907, 533.185)
 scale = Vector2(0.63, 0.63)

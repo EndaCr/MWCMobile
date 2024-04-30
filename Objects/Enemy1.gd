@@ -3,7 +3,6 @@ const SPEED = 600.0
 @onready var game_manager = get_parent().get_node("%GameManager")
 
 func _ready():
-	#print_debug(get_tree().get_root())
 	pass
 func _physics_process(delta):
 	position.y += SPEED * delta

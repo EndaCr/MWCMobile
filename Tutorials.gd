@@ -60,7 +60,7 @@ func _process(_delta):
 							storedEnd = Vector2.ZERO
 							startPoint = curPoint
 					if midPoint.distance_to(storedMid) <= drawRange:
-						if(abs(storedStart.y - storedEnd.y)<= 5 && abs(startPoint.x - curPoint.x)<= 5)||(abs(storedStart.x - storedEnd.x)<= 5 && abs(startPoint.y - curPoint.y)<= 5):
+						if(abs(storedStart.y - storedEnd.y)<= 50 && abs(startPoint.x - curPoint.x)<= 50)||(abs(storedStart.x - storedEnd.x)<= 50 && abs(startPoint.y - curPoint.y)<= 50):
 							print("turret")
 							inst(midPoint, turret)
 							storedStart = Vector2.ZERO

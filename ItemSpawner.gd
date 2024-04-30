@@ -1,7 +1,7 @@
 extends Marker2D
 
 @export var item: Resource
-@export var maxRange: float
+@export var maxRange: int
 var timer = 0
 @export var interval: float
 # Called when the node enters the scene tree for the first time.
