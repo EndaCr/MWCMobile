@@ -22,7 +22,7 @@ func _physics_process(delta):
 			queue_free()
 		else:
 			game_manager.score += 1
-
+			queue_free()
 
 
 func _on_body_entered(body):

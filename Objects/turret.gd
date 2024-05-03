@@ -7,7 +7,7 @@ var bulletD = preload("res://Objects/BulletD.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await deleteSelf()
-
+	$TurretSFX.play()
 func _process(_delta):
 	var fire = randi_range(0,20)
 	if fire == 9:

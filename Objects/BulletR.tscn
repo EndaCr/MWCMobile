@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://8yame32yqxh6"]
+[gd_scene load_steps=5 format=3 uid="uid://8yame32yqxh6"]
 
 [ext_resource type="Script" path="res://Objects/BulletR.gd" id="1_qcge8"]
 [ext_resource type="Texture2D" uid="uid://b6mmh5cvh4fr0" path="res://Sprites/08.png" id="2_maqvj"]
+[ext_resource type="AudioStream" uid="uid://ctmwpm1f1k2a" path="res://laserShoot.wav" id="3_h1d8a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j3nrq"]
 
@@ -15,3 +16,7 @@ texture = ExtResource("2_maqvj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_j3nrq")
+
+[node name="BulletSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_h1d8a")
+volume_db = -9.0

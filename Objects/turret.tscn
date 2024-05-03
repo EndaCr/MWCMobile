@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4ytscarwinwx"]
+[gd_scene load_steps=5 format=3 uid="uid://c4ytscarwinwx"]
 
 [ext_resource type="Texture2D" uid="uid://dt2wpt2whplhg" path="res://Sprites/turret.png" id="1_70war"]
 [ext_resource type="Script" path="res://Objects/turret.gd" id="1_q17hu"]
+[ext_resource type="AudioStream" uid="uid://cij1ns1pe68sd" path="res://Execute_01.wav" id="3_2exvl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jg8po"]
 radius = 144.347
@@ -23,3 +24,6 @@ texture = ExtResource("1_70war")
 [node name="Gun3" type="Marker2D" parent="."]
 
 [node name="Gun4" type="Marker2D" parent="."]
+
+[node name="TurretSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2exvl")

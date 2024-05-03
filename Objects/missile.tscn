@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ry4dwp082ic2"]
+[gd_scene load_steps=5 format=3 uid="uid://ry4dwp082ic2"]
 
 [ext_resource type="Texture2D" uid="uid://kwd7vmw8m4dw" path="res://Sprites/Missile_D_Medium.png" id="1_8jrdw"]
 [ext_resource type="Script" path="res://Objects/missile.gd" id="1_asm4h"]
+[ext_resource type="AudioStream" uid="uid://b4mgmby2p8h55" path="res://beam-8-43831.mp3" id="3_upyl2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bglvh"]
 size = Vector2(85, 113)
@@ -17,5 +18,8 @@ shape = SubResource("RectangleShape2D_bglvh")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_8jrdw")
+
+[node name="MissileSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_upyl2")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
