@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8hmdcrro55w"
-path="res://.godot/imported/Barrier.png-9cc7cc9f4d1063d000a461bf91e3c82f.ctex"
+path="res://.godot/imported/barrieron.png-81f87fa9a6c59fa9e2e1c73d284f24a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Barrier.png"
-dest_files=["res://.godot/imported/Barrier.png-9cc7cc9f4d1063d000a461bf91e3c82f.ctex"]
+source_file="res://Sprites/barrieron.png"
+dest_files=["res://.godot/imported/barrieron.png-81f87fa9a6c59fa9e2e1c73d284f24a2.ctex"]
 
 [params]
 

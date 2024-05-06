@@ -146,3 +146,7 @@ texture = ExtResource("13_303th")
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_c1akp")
 volume_db = -3.713
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1136.0
+offset_bottom = 122.0
