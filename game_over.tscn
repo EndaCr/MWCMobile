@@ -61,7 +61,7 @@ offset_top = 21.0
 offset_right = 124.0
 offset_bottom = 85.0
 grow_horizontal = 2
-text = "Game Over"
+text = "You Win!"
 label_settings = SubResource("LabelSettings_nkf5p")
 
 [node name="High Score" type="Label" parent="Panel"]

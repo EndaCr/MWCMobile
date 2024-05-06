@@ -356,3 +356,5 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_vqh4d")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

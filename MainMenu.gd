@@ -16,7 +16,7 @@ func _on_start_pressed():
 
 
 func _on_help_pressed():
-	get_tree().change_scene_to_file("res://Tutorials.tscn")
+	get_tree().change_scene_to_file("res://level.tscn")
 
 
 func _on_exit_pressed():

@@ -9,6 +9,7 @@ func _ready():
 		highScore= save_file.get_32()
 
 func get_score():
+	$"Panel/Game Over".text = "Game Over"
 	$Panel/Score.text = "Score: " + str(game_manager.score)
 	if game_manager.score > highScore:
 		highScore = game_manager.score

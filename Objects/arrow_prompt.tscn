@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsw5p0rcjuybm"]
+
+[ext_resource type="Texture2D" uid="uid://cti7yus46t1s8" path="res://Sprites/missile shape.png" id="1_3p0ax"]
+[ext_resource type="Script" path="res://Objects/ArrowPrompt.gd" id="2_siyok"]
+
+[node name="ArrowPrompt" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.203922)
+texture_filter = 1
+position = Vector2(985, 698)
+texture = ExtResource("1_3p0ax")
+script = ExtResource("2_siyok")

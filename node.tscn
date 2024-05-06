@@ -78,6 +78,13 @@ item = ExtResource("7_hf8m7")
 maxRange = 1800
 interval = 3.0
 
+[node name="EnemySpawner5" parent="." instance=ExtResource("3_f4xsm")]
+unique_name_in_owner = true
+visible = false
+item = ExtResource("7_hf8m7")
+maxRange = 1800
+interval = 10.0
+
 [node name="PowerSpawner" parent="." instance=ExtResource("3_f4xsm")]
 item = ExtResource("4_sucii")
 maxRange = 1800

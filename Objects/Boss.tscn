@@ -1,6 +1,7 @@
-[gd_scene load_steps=57 format=3 uid="uid://dx75yw5rwpbhj"]
+[gd_scene load_steps=58 format=3 uid="uid://dx75yw5rwpbhj"]
 
 [ext_resource type="Texture2D" uid="uid://csprptlqnmwet" path="res://Sprites/Nairan - Dreadnought - Weapons.png" id="1_1fsov"]
+[ext_resource type="Script" path="res://Objects/Boss.gd" id="1_knj63"]
 [ext_resource type="Texture2D" uid="uid://m6a1f7nhpabw" path="res://Sprites/Nairan - Dreadnought -  Destruction.png" id="2_3mw8g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vtjb"]
@@ -386,8 +387,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0em3"]
 size = Vector2(68, 98)
 
-[node name="CharacterBody2D2" type="CharacterBody2D"]
+[node name="Boss" type="Area2D"]
 rotation = 3.14159
+script = ExtResource("1_knj63")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
