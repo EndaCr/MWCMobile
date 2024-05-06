@@ -22,3 +22,4 @@ one_way_collision_margin = 0.0
 
 [node name="ShieldSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_j7qw8")
+volume_db = -10.0

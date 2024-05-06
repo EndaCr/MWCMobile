@@ -23,7 +23,7 @@ var turret = preload("res://Objects/turret.tscn")
 var bomb = preload("res://Objects/Bomb.tscn")
 
 func _ready():
-	#$BGM.play()
+	$BGM.play()
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
