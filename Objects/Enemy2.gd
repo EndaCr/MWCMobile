@@ -15,7 +15,7 @@ func _physics_process(delta):
 
 
 func _on_area_entered(area):
-	if area.name =="Missile"|| area.name =="Shield":
+	if area.name =="Missile"|| area.name =="Shield"|| area.name == "Bomb":
 		$Sprite2D.play("destruction")
 		game_manager.score+=1
 		queue_free()

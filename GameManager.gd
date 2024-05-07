@@ -6,7 +6,7 @@ var score = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 		$"../Stats2".text="Score: " + str(score)
-		if score == 10:
+		if score == 10 :
 			var enemy_spawn2 = get_node("%EnemySpawner2")
 			enemy_spawn2.set_visible(true)
 		if score == 20:

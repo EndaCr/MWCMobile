@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://blqr6e85v2spd"]
+[gd_scene load_steps=19 format=3 uid="uid://blqr6e85v2spd"]
 
 [ext_resource type="Script" path="res://node.gd" id="1_tusri"]
 [ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="3_pi157"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cs150jxkfr364" path="res://Sprites/shield.png" id="14_twllq"]
 [ext_resource type="Texture2D" uid="uid://dt2wpt2whplhg" path="res://Sprites/turret.png" id="15_308hj"]
 [ext_resource type="AudioStream" uid="uid://dn7xelp2l438v" path="res://m-art_PerfectSimulator.ogg" id="16_ohinm"]
+[ext_resource type="Texture2D" uid="uid://b0vrohuoluibx" path="res://Sprites/shapes.png" id="17_rkte5"]
+[ext_resource type="Texture2D" uid="uid://cb3rkya6ec31m" path="res://Sprites/bomb prompt.png" id="18_0mmec"]
 [ext_resource type="Script" path="res://GameManagerLvl.gd" id="18_4ug70"]
 
 [node name="Level" type="Node2D"]
@@ -147,3 +149,26 @@ volume_db = -20.0
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("18_4ug70")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 390.0
+offset_top = 50.0
+offset_right = 1526.0
+offset_bottom = 172.0
+theme_override_font_sizes/font_size = 106
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Draw prompt" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.266667)
+position = Vector2(1000, 500)
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("17_rkte5")
+
+[node name="Bomb prompt" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.556863)
+position = Vector2(1000, 500)
+scale = Vector2(1.185, 1.185)
+texture = ExtResource("18_0mmec")
