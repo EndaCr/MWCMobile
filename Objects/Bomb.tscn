@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://rpxrtxumc6bg"]
+[gd_scene load_steps=17 format=3 uid="uid://rpxrtxumc6bg"]
 
 [ext_resource type="Texture2D" uid="uid://bv8cijicm65gp" path="res://Sprites/explosion.png" id="1_flp60"]
 [ext_resource type="Script" path="res://Objects/Bomb.gd" id="1_qv53s"]
+[ext_resource type="AudioStream" uid="uid://54jnwmei2t0c" path="res://explosion-6055.mp3" id="3_853eh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h2teg"]
 radius = 44.1022
@@ -105,5 +106,9 @@ sprite_frames = SubResource("SpriteFrames_koqe0")
 autoplay = "default"
 frame = 11
 frame_progress = 1.0
+
+[node name="Explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_853eh")
+volume_db = -10.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -19,6 +19,7 @@ func _physics_process(_delta):
 	if hp <= 0 && !finished:
 		finished = true
 		$AnimatedSprite2D.play("explosion")
+		$Destruction.play()
 		await gameOver()
 	# Handle jump.
 	if Input.is_action_just_pressed("shoot") && hp> 0:

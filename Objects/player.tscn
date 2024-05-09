@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://4iwflqaoexa8"]
+[gd_scene load_steps=22 format=3 uid="uid://4iwflqaoexa8"]
 
 [ext_resource type="Texture2D" uid="uid://5ijrlmq8rle2" path="res://Sprites/Ship_2_D_Medium.png" id="1_6j7il"]
 [ext_resource type="Script" path="res://Objects/player.gd" id="1_ngmc6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dacja42ut4rgx" path="res://Sprites/Ship_2_D_Medium4.png" id="5_rws55"]
 [ext_resource type="Texture2D" uid="uid://bs2rjp5ps7pwh" path="res://Sprites/Ship_2_D_Medium5.png" id="6_24uqq"]
 [ext_resource type="Texture2D" uid="uid://bv8cijicm65gp" path="res://Sprites/explosion.png" id="7_3hy2a"]
+[ext_resource type="AudioStream" uid="uid://b3niagbhqdh4y" path="res://spaceexplosion-45813.mp3" id="8_pmuwk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vl3b1"]
 atlas = ExtResource("7_3hy2a")
@@ -141,5 +142,9 @@ position = Vector2(-76, -14)
 
 [node name="Turret2" type="Marker2D" parent="."]
 position = Vector2(76, -14)
+
+[node name="Destruction" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_pmuwk")
+volume_db = -10.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

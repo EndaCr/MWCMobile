@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvh2jdtglxkss"]
+[gd_scene load_steps=19 format=3 uid="uid://cvh2jdtglxkss"]
 
 [ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="1_gs728"]
 [ext_resource type="Script" path="res://node.gd" id="1_s0lrw"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dt2wpt2whplhg" path="res://Sprites/turret.png" id="13_303th"]
 [ext_resource type="FontFile" uid="uid://bko0ak3sfr8kk" path="res://ThaleahFat_TTF.ttf" id="13_peui1"]
 [ext_resource type="AudioStream" uid="uid://dn7xelp2l438v" path="res://m-art_PerfectSimulator.ogg" id="15_c1akp"]
+[ext_resource type="AudioStream" uid="uid://d1kxqgy4clxnm" path="res://Bleep_06.wav" id="18_60b47"]
 
 [node name="Node" type="Node2D"]
 process_priority = 1
@@ -149,4 +150,8 @@ texture = ExtResource("13_303th")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_c1akp")
+volume_db = -20.0
+
+[node name="Charge" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_60b47")
 volume_db = -20.0

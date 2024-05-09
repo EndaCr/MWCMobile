@@ -6,6 +6,7 @@ var curPoint: Vector2
 var storedStart: Vector2
 var storedEnd: Vector2
 var storedMid: Vector2
+var detonatePoint = Vector2(-200,-200)
 
 var drawing = false
 var length = 100
@@ -46,6 +47,7 @@ func _process(_delta):
 		if Input.is_action_pressed("shoot"):
 			if drawing:
 				curPoint = get_global_mouse_position()
+				detonatePoint = curPoint
 				if startPoint.distance_to(curPoint) >= length:
 					midPoint = Vector2((startPoint.x+curPoint.x)/2,(startPoint.y+curPoint.y)/2)
 					queue_redraw()
@@ -89,6 +91,8 @@ func _process(_delta):
 					if radius< maxRadius:
 						radius+=0.3
 						queue_redraw()
+						if !$Charge.is_playing():
+							$Charge.play()
 					pass
 
 		else:
@@ -96,6 +100,7 @@ func _process(_delta):
 			storedStart = startPoint
 			storedEnd = curPoint
 			storedMid = midPoint
+			detonatePoint = Vector2(-200,-200)
 			if radius > 1:
 				inst(curPoint - Vector2(0,300),bomb,Vector2(radius/50,radius/50))
 				radius = 0
@@ -121,7 +126,7 @@ func refresh(icon):
 
 
 func _draw():
-	draw_circle(curPoint,100,Color.RED)
+	draw_circle(detonatePoint,100,Color.RED)
 	draw_circle(curPoint,radius,Color.LIGHT_SLATE_GRAY)
 	draw_line(Vector2(storedStart.x, storedStart.y),Vector2(storedEnd.x,storedEnd.y), Color.CORAL, 5.0)
 	draw_line(Vector2(startPoint.x, startPoint.y),Vector2(curPoint.x, curPoint.y),Color.WHITE, 5.0)
