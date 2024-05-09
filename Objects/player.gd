@@ -29,7 +29,7 @@ func _physics_process(_delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, 15)
-
+	position = position.posmodv(get_viewport_rect().size)
 	move_and_slide()
 
 func inst(turret1 , turret2):

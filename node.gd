@@ -121,6 +121,7 @@ func refresh(icon):
 
 
 func _draw():
+	draw_circle(curPoint,100,Color.RED)
 	draw_circle(curPoint,radius,Color.LIGHT_SLATE_GRAY)
 	draw_line(Vector2(storedStart.x, storedStart.y),Vector2(storedEnd.x,storedEnd.y), Color.CORAL, 5.0)
 	draw_line(Vector2(startPoint.x, startPoint.y),Vector2(curPoint.x, curPoint.y),Color.WHITE, 5.0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://blqr6e85v2spd"]
+[gd_scene load_steps=20 format=3 uid="uid://blqr6e85v2spd"]
 
 [ext_resource type="Script" path="res://node.gd" id="1_tusri"]
 [ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="3_pi157"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bpwlp2pc28qkb" path="res://Objects/PowerUp.tscn" id="10_nahtt"]
 [ext_resource type="Texture2D" uid="uid://5ijrlmq8rle2" path="res://Sprites/Ship_2_D_Medium.png" id="11_kutdk"]
 [ext_resource type="Texture2D" uid="uid://xodaq28f6af4" path="res://Sprites/Ship_2_D_Medium3.png" id="12_61f8r"]
+[ext_resource type="FontFile" uid="uid://bko0ak3sfr8kk" path="res://ThaleahFat_TTF.ttf" id="12_obewd"]
 [ext_resource type="Texture2D" uid="uid://kwd7vmw8m4dw" path="res://Sprites/Missile_D_Medium.png" id="13_rj37s"]
 [ext_resource type="Texture2D" uid="uid://cs150jxkfr364" path="res://Sprites/shield.png" id="14_twllq"]
 [ext_resource type="Texture2D" uid="uid://dt2wpt2whplhg" path="res://Sprites/turret.png" id="15_308hj"]
@@ -109,6 +110,7 @@ action = "right"
 [node name="TestLabel" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("12_obewd")
 theme_override_font_sizes/font_size = 76
 
 [node name="Stats" type="Label" parent="."]
@@ -116,6 +118,7 @@ offset_left = 1626.0
 offset_top = 12.0
 offset_right = 1670.0
 offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("12_obewd")
 theme_override_font_sizes/font_size = 76
 
 [node name="Stats2" type="Label" parent="."]
@@ -123,6 +126,7 @@ offset_left = 1569.0
 offset_top = 148.0
 offset_right = 1609.0
 offset_bottom = 253.0
+theme_override_fonts/font = ExtResource("12_obewd")
 theme_override_font_sizes/font_size = 76
 
 [node name="MissileIcon" type="Sprite2D" parent="."]
@@ -155,6 +159,7 @@ offset_left = 390.0
 offset_top = 50.0
 offset_right = 1526.0
 offset_bottom = 172.0
+theme_override_fonts/font = ExtResource("12_obewd")
 theme_override_font_sizes/font_size = 106
 horizontal_alignment = 1
 vertical_alignment = 1

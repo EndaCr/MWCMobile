@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cvh2jdtglxkss"]
+[gd_scene load_steps=18 format=3 uid="uid://cvh2jdtglxkss"]
 
 [ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="1_gs728"]
 [ext_resource type="Script" path="res://node.gd" id="1_s0lrw"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://kwd7vmw8m4dw" path="res://Sprites/Missile_D_Medium.png" id="11_hi103"]
 [ext_resource type="Texture2D" uid="uid://cs150jxkfr364" path="res://Sprites/shield.png" id="12_ff4yu"]
 [ext_resource type="Texture2D" uid="uid://dt2wpt2whplhg" path="res://Sprites/turret.png" id="13_303th"]
+[ext_resource type="FontFile" uid="uid://bko0ak3sfr8kk" path="res://ThaleahFat_TTF.ttf" id="13_peui1"]
 [ext_resource type="AudioStream" uid="uid://dn7xelp2l438v" path="res://m-art_PerfectSimulator.ogg" id="15_c1akp"]
 
 [node name="Node" type="Node2D"]
@@ -110,6 +111,7 @@ action = "right"
 [node name="TestLabel" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("13_peui1")
 theme_override_font_sizes/font_size = 76
 
 [node name="Stats" type="Label" parent="."]
@@ -117,6 +119,7 @@ offset_left = 1626.0
 offset_top = 12.0
 offset_right = 1670.0
 offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("13_peui1")
 theme_override_font_sizes/font_size = 76
 
 [node name="Stats2" type="Label" parent="."]
@@ -124,6 +127,7 @@ offset_left = 1631.0
 offset_top = 148.0
 offset_right = 1671.0
 offset_bottom = 253.0
+theme_override_fonts/font = ExtResource("13_peui1")
 theme_override_font_sizes/font_size = 76
 
 [node name="MissileIcon" type="Sprite2D" parent="."]

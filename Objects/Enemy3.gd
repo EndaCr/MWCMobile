@@ -13,10 +13,8 @@ func _ready():
 	pass
 func _physics_process(delta):
 	position.y += Speed * delta
-	#move_and_slide()
-	
 
-		
+
 
 
 
@@ -30,5 +28,11 @@ func _on_body_entered(body):
 func _on_area_entered(area):
 	if area.name =="Bomb":
 		$Sprite2D.play("destruction")
-		game_manager.score+=1
-		queue_free()
+		await defeated()
+
+
+func defeated():
+	await get_tree().create_timer(0.5).timeout
+	game_manager.score+=1
+	queue_free()
+	pass

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp5jlq0s6byde"]
+[gd_scene load_steps=7 format=3 uid="uid://dp5jlq0s6byde"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_0akql"]
+[ext_resource type="FontFile" uid="uid://bko0ak3sfr8kk" path="res://ThaleahFat_TTF.ttf" id="2_uccq6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtrh1"]
 bg_color = Color(0.521569, 0, 0.0470588, 1)
@@ -10,13 +11,16 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_nkf5p"]
-font_size = 46
+font = ExtResource("2_uccq6")
+font_size = 93
 
 [sub_resource type="LabelSettings" id="LabelSettings_yhoco"]
-font_size = 32
+font = ExtResource("2_uccq6")
+font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_ccxsq"]
-font_size = 32
+font = ExtResource("2_uccq6")
+font_size = 40
 
 [node name="Game Over" type="Control"]
 layout_mode = 3
@@ -77,8 +81,7 @@ offset_right = 130.0
 offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 1
-text = "High Score:"
+theme_override_font_sizes/font_size = 10
 label_settings = SubResource("LabelSettings_yhoco")
 
 [node name="Score" type="Label" parent="Panel"]
@@ -94,7 +97,6 @@ offset_right = 128.0
 offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Score:"
 label_settings = SubResource("LabelSettings_ccxsq")
 
 [node name="Retry" type="Button" parent="Panel"]
@@ -110,6 +112,7 @@ offset_right = 54.0
 offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_uccq6")
 theme_override_font_sizes/font_size = 41
 text = "Retry
 "
@@ -127,6 +130,7 @@ offset_right = 39.0
 offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_uccq6")
 theme_override_font_sizes/font_size = 36
 text = "Quit"
 

@@ -119,7 +119,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_21ts0"]
 radius = 16.3469
 
-[node name="Area2D2" type="Area2D"]
+[node name="enemy" type="Area2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_xngsr")
 
