@@ -19,7 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://dn7xelp2l438v" path="res://m-art_PerfectSimulator.ogg" id="15_c1akp"]
 [ext_resource type="AudioStream" uid="uid://d1kxqgy4clxnm" path="res://Bleep_06.wav" id="18_60b47"]
 
-[node name="Node" type="Node2D"]
+[node name="Endless" type="Node2D"]
 process_priority = 1
 script = ExtResource("1_s0lrw")
 

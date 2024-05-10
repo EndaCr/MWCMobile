@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://blqr6e85v2spd"]
+[gd_scene load_steps=22 format=3 uid="uid://blqr6e85v2spd"]
 
 [ext_resource type="Script" path="res://node.gd" id="1_tusri"]
 [ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="3_pi157"]
@@ -20,12 +20,14 @@
 [ext_resource type="Texture2D" uid="uid://cb3rkya6ec31m" path="res://Sprites/bomb prompt.png" id="18_0mmec"]
 [ext_resource type="Script" path="res://GameManagerLvl.gd" id="18_4ug70"]
 [ext_resource type="AudioStream" uid="uid://d1kxqgy4clxnm" path="res://Bleep_06.wav" id="20_wmne4"]
+[ext_resource type="PackedScene" uid="uid://b3wgd35orqxvf" path="res://SpaceBackground.tscn" id="21_wrxtc"]
 
 [node name="Level" type="Node2D"]
 process_priority = 1
 script = ExtResource("1_tusri")
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 show_behind_parent = true
 light_mask = 513
 visibility_layer = 513
@@ -182,3 +184,5 @@ texture = ExtResource("18_0mmec")
 [node name="Charge" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_wmne4")
 volume_db = -20.0
+
+[node name="SpaceBackground" parent="." instance=ExtResource("21_wrxtc")]
