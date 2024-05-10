@@ -1,0 +1,161 @@
+[gd_scene load_steps=20 format=3 uid="uid://cvh2jdtglxkss"]
+
+[ext_resource type="Script" path="res://node.gd" id="1_a8248"]
+[ext_resource type="Script" path="res://GameManager.gd" id="2_0fpo6"]
+[ext_resource type="Texture2D" uid="uid://oc5l6avhwjv8" path="res://Sprites/Space Bg 1.png" id="3_npb4x"]
+[ext_resource type="PackedScene" uid="uid://dp5jlq0s6byde" path="res://game_over.tscn" id="4_fbyo8"]
+[ext_resource type="PackedScene" uid="uid://4iwflqaoexa8" path="res://Objects/player.tscn" id="5_ofwj2"]
+[ext_resource type="PackedScene" uid="uid://cnyfxgi8lvp1n" path="res://Objects/item_spawner.tscn" id="6_mylfj"]
+[ext_resource type="PackedScene" uid="uid://ew25cc7xayrg" path="res://Objects/Enemy2.tscn" id="7_1oje1"]
+[ext_resource type="PackedScene" uid="uid://bdcib8w51pxj1" path="res://Objects/Enemy4.tscn" id="8_h4nay"]
+[ext_resource type="PackedScene" uid="uid://0j2h6mlgev5d" path="res://Objects/Enemy3.tscn" id="9_lbk6y"]
+[ext_resource type="PackedScene" uid="uid://bpwlp2pc28qkb" path="res://Objects/PowerUp.tscn" id="10_4af05"]
+[ext_resource type="Texture2D" uid="uid://5ijrlmq8rle2" path="res://Sprites/Ship_2_D_Medium.png" id="11_xxidb"]
+[ext_resource type="Texture2D" uid="uid://xodaq28f6af4" path="res://Sprites/Ship_2_D_Medium3.png" id="12_b12jk"]
+[ext_resource type="FontFile" uid="uid://bko0ak3sfr8kk" path="res://ThaleahFat_TTF.ttf" id="13_hvnf2"]
+[ext_resource type="Texture2D" uid="uid://kwd7vmw8m4dw" path="res://Sprites/Missile_D_Medium.png" id="14_fukwe"]
+[ext_resource type="Texture2D" uid="uid://cs150jxkfr364" path="res://Sprites/shield.png" id="15_pj3m1"]
+[ext_resource type="Texture2D" uid="uid://dt2wpt2whplhg" path="res://Sprites/turret.png" id="16_0yjh6"]
+[ext_resource type="AudioStream" uid="uid://dn7xelp2l438v" path="res://m-art_PerfectSimulator.ogg" id="17_w1gcf"]
+[ext_resource type="AudioStream" uid="uid://d1kxqgy4clxnm" path="res://Bleep_06.wav" id="18_vuaei"]
+[ext_resource type="PackedScene" uid="uid://b3wgd35orqxvf" path="res://SpaceBackground.tscn" id="19_gaaqc"]
+
+[node name="Endless" type="Node2D"]
+process_priority = 1
+script = ExtResource("1_a8248")
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_0fpo6")
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+show_behind_parent = true
+light_mask = 513
+visibility_layer = 513
+texture_filter = 1
+texture_repeat = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -512.0
+offset_right = 2700.0
+offset_bottom = 1431.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_npb4x")
+stretch_mode = 1
+
+[node name="Game Over" parent="." instance=ExtResource("4_fbyo8")]
+visible = false
+offset_left = 997.0
+offset_top = 575.0
+offset_right = 997.0
+offset_bottom = 575.0
+
+[node name="Player" parent="." instance=ExtResource("5_ofwj2")]
+position = Vector2(981, 980)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("6_mylfj")]
+maxRange = 1800
+interval = 3.0
+
+[node name="EnemySpawner2" parent="." instance=ExtResource("6_mylfj")]
+unique_name_in_owner = true
+visible = false
+item = ExtResource("7_1oje1")
+maxRange = 1800
+interval = 3.0
+
+[node name="EnemySpawner3" parent="." instance=ExtResource("6_mylfj")]
+unique_name_in_owner = true
+visible = false
+item = ExtResource("8_h4nay")
+maxRange = 1800
+interval = 9.0
+
+[node name="EnemySpawner4" parent="." instance=ExtResource("6_mylfj")]
+unique_name_in_owner = true
+visible = false
+item = ExtResource("9_lbk6y")
+maxRange = 1800
+interval = 3.0
+
+[node name="EnemySpawner5" parent="." instance=ExtResource("6_mylfj")]
+unique_name_in_owner = true
+visible = false
+item = ExtResource("9_lbk6y")
+maxRange = 1800
+interval = 10.0
+
+[node name="PowerSpawner" parent="." instance=ExtResource("6_mylfj")]
+item = ExtResource("10_4af05")
+maxRange = 1800
+interval = 10.0
+
+[node name="LeftButton" type="TouchScreenButton" parent="."]
+position = Vector2(-5, 1059.94)
+rotation = -1.5708
+scale = Vector2(0.624349, 0.569106)
+texture_normal = ExtResource("11_xxidb")
+texture_pressed = ExtResource("12_b12jk")
+passby_press = true
+action = "left"
+
+[node name="RightButton" type="TouchScreenButton" parent="."]
+position = Vector2(1913.31, 921.167)
+rotation = 1.5708
+scale = Vector2(0.624349, 0.569106)
+texture_normal = ExtResource("11_xxidb")
+texture_pressed = ExtResource("12_b12jk")
+action = "right"
+
+[node name="TestLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("13_hvnf2")
+theme_override_font_sizes/font_size = 76
+
+[node name="Stats" type="Label" parent="."]
+offset_left = 1626.0
+offset_top = 12.0
+offset_right = 1670.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("13_hvnf2")
+theme_override_font_sizes/font_size = 76
+
+[node name="Stats2" type="Label" parent="."]
+offset_left = 1631.0
+offset_top = 148.0
+offset_right = 1671.0
+offset_bottom = 253.0
+theme_override_fonts/font = ExtResource("13_hvnf2")
+theme_override_font_sizes/font_size = 76
+
+[node name="MissileIcon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.564706)
+position = Vector2(72, 442)
+texture = ExtResource("14_fukwe")
+
+[node name="ShieldIcon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.564706)
+position = Vector2(81, 621)
+scale = Vector2(0.299079, 0.356914)
+texture = ExtResource("15_pj3m1")
+
+[node name="TurretIcon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.564706)
+position = Vector2(69.9999, 784)
+scale = Vector2(0.188867, 0.211958)
+texture = ExtResource("16_0yjh6")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_w1gcf")
+volume_db = -20.0
+
+[node name="Charge" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_vuaei")
+volume_db = -20.0
+
+[node name="SpaceBackground" parent="." instance=ExtResource("19_gaaqc")]
