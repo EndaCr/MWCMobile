@@ -12,12 +12,15 @@ func _process(_delta):
 
 
 func _on_start_pressed():
+	$"Button sound".play()
 	get_tree().change_scene_to_file("res://Endless.tscn")
 
 
 func _on_help_pressed():
+	$"Button sound".play()
 	get_tree().change_scene_to_file("res://level.tscn")
 
 
 func _on_exit_pressed():
+	$"Button sound".play()
 	get_tree().quit()

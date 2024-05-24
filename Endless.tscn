@@ -87,7 +87,7 @@ unique_name_in_owner = true
 visible = false
 item = ExtResource("9_lbk6y")
 maxRange = 1800
-interval = 10.0
+interval = 2.0
 
 [node name="PowerSpawner" parent="." instance=ExtResource("6_mylfj")]
 item = ExtResource("10_4af05")
